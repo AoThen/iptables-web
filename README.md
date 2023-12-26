@@ -26,6 +26,22 @@ docker run -d \
 - `IPT_WEB_ADDRESS`: 程序监听地址地址，默认：10001
 
 ### 直接安装
+
+环境安装
+
+```shell
+sudo apt-get update
+sudo apt-get install make screen golang -y
+
+git clone --depth 1 https://github.com/pretty66/iptables-web.git
+cd iptables-web
+make
+./iptables-server -a :10001 -u admin -p admin
+
+screen -U -S iptables-server
+screen -U -r iptables-server
+```
+---
 ```shell
 git clone https://github.com/pretty66/iptables-web.git
 cd iptables-web
